@@ -1,0 +1,121 @@
+body{
+    background: #0D0F2B;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content-main {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    justify-items: center;
+    background: #1B1F3A;
+    min-width: 650px;
+    max-width: 60%;
+    min-height: 500px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.content-profile-picture {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-profile-picture img {
+    margin-left: 10px;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    background: gray;
+}
+
+.navbar nav ul {
+    margin: 1px -40px;
+}
+
+.navbar nav ul li {
+    list-style: none;
+    margin-top: -10px;
+}
+
+.navbar nav ul li a {
+    list-style: none;
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.container-contac, .title-description h2, .title-tools h2 {
+    margin-left: 10px;
+}
+
+.group-option-contact {
+    padding: 5px 0;    
+}
+
+.content-icon {
+    padding: 5px 0;
+}
+
+.group-option-contact .text-option {
+    margin: 5px;
+    color: #ffffff;
+    font-size: 18px;
+    max-width: 5px;
+}
+
+.group-option-contact i, .bi-file-text, .bi-wrench {
+    color: #ffffff;
+    font-size: 20px;
+    gap: 5px;
+}
+
+.content-profile-info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.content-name-profession {
+    display: flex;
+    flex-direction: column;
+    font-size: 26px;
+    font-weight: bold;
+    color: #264653;
+}
+
+.group-option-profession {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.title-description, .title-tools {
+    display: flex;
+    align-items: center;
+}
+
+.bi-dot {
+    display: flex;
+    font-size: 40px;
+    color: #26C6DA;
+}
+
+span, p {
+    color: #ffffff;
+}
+
+h2, h3 {
+    color: #ffffff;
+    margin: 5px 0 5px 0;
+}

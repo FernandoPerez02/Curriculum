@@ -1,0 +1,134 @@
+body {
+    background: #0D0F2B;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-certificates {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    width: 100%;
+    align-items: center;
+    margin: 65px 0;
+    grid-gap: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    width: 100%;
+    background: #0D0F2B;
+    z-index: 1000;
+    top: 0;
+}
+
+.navbar, header h2 {
+    position: fixed;
+    top: 10px; 
+}
+
+.navbar {
+    right: 0;
+}
+
+.navbar nav ul {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    list-style: none;
+    padding: 0 15px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.item-certificate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 400px;
+    min-height: 240px;
+    max-height: 500px;
+    background: #1B1F3A;
+    overflow: hidden;
+    box-shadow: #26c6da 0px 4px 10px;
+    border-radius: 10px;
+}
+
+.container-img {
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+}
+
+.container-img img {
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.title-item-certificate {
+    position: relative;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px;
+    margin: 0;
+    color: #0D0F2B;
+}
+
+.item-experience {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    min-height: 240px;
+    max-height: 500px;
+    background: #1B1F3A;
+    overflow: hidden;
+    box-shadow: #26c6da 0px 4px 10px;
+    border-radius: 10px;
+}
+
+.group-item, .content-text {
+    display: flex;
+    align-items: center;
+}
+
+.group-item h4 {
+    margin-left: 30px;
+    font-size: 1.2rem;
+}
+
+.group-item, h4, p {
+    margin: 2px 0;
+}
+
+.bi-dot {
+    font-size: 35px;
+    color: #26C6DA;
+}
+
+.item-experience span {
+    padding: 0 0 10px 40px;
+}
+
+.bi-building {
+    padding: 0 10px;
+    margin: 0;
+}
+
+h2, a, img, h4, .bi-building, p, span{
+    color: #ffffff;
+}
