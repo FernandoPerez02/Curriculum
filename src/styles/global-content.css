@@ -136,60 +136,107 @@ body {
   margin: var(--space-3) auto 0;
 }
 
-/* ---------------------------------- Certificates grid ---------------------------------- */
+/* ---------------------------------- Credentials ---------------------------------- */
+/*
+ * Certificates are shown as text/badge credential cards rather than scanned
+ * document images: the SENA diplomas include personal ID numbers, and a
+ * public GitHub Pages URL gets indexed and is hard to fully retract later.
+ */
 
-.content-certificates {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--space-6);
-  padding-bottom: var(--space-16);
+.credential-group {
+  padding-block: var(--space-8);
 }
 
-.item-certificate {
+.credential-group-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-5);
+}
+
+.credential-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.credential-grid-featured {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.credential-card {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  border-radius: var(--radius-md);
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
-.item-certificate:hover {
+.credential-card:hover {
   transform: translateY(-4px);
   border-color: rgba(45, 212, 222, 0.3);
   box-shadow: var(--shadow-md);
 }
 
-.container-img {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  background-color: #f2f3f9;
+.credential-card > i {
+  font-size: 1.4rem;
+  color: var(--color-accent);
+  margin-top: 0.15rem;
 }
 
-.container-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  background-color: #ffffff;
-  transition: transform 0.5s var(--ease);
+.credential-featured {
+  background: linear-gradient(160deg, var(--color-surface), var(--color-surface-2));
+  border-color: rgba(45, 212, 222, 0.2);
 }
 
-.container-img:hover img {
-  transform: scale(1.06);
+.credential-featured > i {
+  font-size: 1.7rem;
 }
 
-.title-item-certificate {
-  padding: var(--space-4) var(--space-5);
-  margin: 0;
+.credential-card h3 {
   font-size: 0.98rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.4;
   color: var(--color-text);
-  border-top: 1px solid var(--color-border);
+  margin-bottom: var(--space-1);
+}
+
+.credential-org {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.credential-card .badge {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.credential-card:has(.credential-verify) {
+  padding-bottom: calc(var(--space-5) + 1.75rem);
+}
+
+.credential-verify {
+  position: absolute;
+  right: var(--space-5);
+  bottom: var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-accent-strong);
+}
+
+.credential-verify:hover {
+  color: var(--color-accent);
+}
+
+.credential-verify i {
+  font-size: 0.75rem;
 }
 
 /* ---------------------------------- Footer ---------------------------------- */
