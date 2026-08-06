@@ -1,125 +1,250 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/global-content.css">
-    <title>Certificados</title>
-</head>
-<body>
-    <div class="container-certificates">
-        <header>
-            <h2>Certificados</h2>
-            <div class="navbar">
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="/LuisPerezDevPortfolio">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="./experience.html">Experiencia</a>
-                        </li>
-                        <li>
-                            <a href="./projects.html">Proyectos</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <main>
-            <div class="content-certificates">
-                <div class="item-certificate">
-                    <div class="container-img">
-                        <a href="https://drive.google.com/file/d/15Xe4xgQQctjv5drWeVy6cqnjELvV0do0/view?usp=drive_link" target="_blank">
-                            <img src="../../public/images/Diploma-Tecnico-sistemas.jpg" alt="Tecnico en Sistemas">
-                        </a>
-                    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0c1e" />
+    <title>Certificaciones · Luis Fernando Osorio Pérez</title>
+    <meta
+      name="description"
+      content="Certificaciones y cursos de Luis Fernando Osorio Pérez: Técnico en Sistemas, Tecnólogo en Análisis y Desarrollo de Software y cursos complementarios."
+    />
 
-                    <h2 class="title-item-certificate">Tecnico en Sistemas <br>2021-2022</h2>
-                </div>
-                <div class="item-certificate">
-                    <div class="container-img">
-                        <a href="https://drive.google.com/file/d/1Iw32QhrYGn1SQlqpWrQaU8dSvB1-2e3H/view?usp=drive_link" target="_blank">
-                            <img src="../../public/images/Tecnologo.jpg" alt="Analisis y Desarrollo de Software">
-                        </a>
-                    </div>
-                    <h2 class="title-item-certificate">Tecnologo Analisis y Desarrollo de Software <br>2023-2025</h2>
-                </div>
-                <div class="item-certificate">
-                    <div class="container-img">
-                        <a href="https://drive.google.com/file/d/10jk39_SxWijnB6gUq0SBuFn46wUms7Bo/view?usp=drive_link" target="_blank">
-                            <img src="../../public/images/Curso-lecto-escritura.jpg" alt="Lecto Escritura">
-                        </a>
-                    </div>
-                    <h2 class="title-item-certificate">HABILIDADES COGNITIVAS EN LECTO - ESCRITURA <br>2024</h2>
-                </div>   
-                <div class="item-certificate">
-                    <div class="container-img">
-                        <a href="https://drive.google.com/file/d/1UNWy7VmObnGp8LlScEz1iP0TD2PA8NmZ/view?usp=drive_link" target="_blank">
-                            <img src="../../public/images/Curso-habilidades-vida.jpg" alt="Habilidades Para la Vida">
-                        </a>
-                    </div>
-                    <h2 class="title-item-certificate">Habilidades Para La Vida<br>2024</h2>
-                </div>
-                <div class="item-certificate">
-                    <div class="container-img">
-                        <a href="https://drive.google.com/file/d/1Zos4jcpXksiTWmHosZxSOLW0aVzvh4sv/view?usp=drive_link" target="_blank">
-                            <img src="../../public/images/Basico-excel.jpg" alt="Manejo Basico de Excel">
-                        </a>
-                        
-                    </div>
-                    <h2 class="title-item-certificate">Manejo Basico De La Herramienta De Hojas De Calculo Excel<br>2024</h2>
-                </div>
-                <div class="item-certificate">
-                    <div class="container-img">
-                        <a href="https://drive.google.com/file/d/1GNvi0iJXarEONfd7zUTp5FTrkIHDUp7o/view?usp=drive_link" target="_blank">
-                            <img src="../../public/images/Intermedio-excel.jpg" alt="Manejo Intermedio de Excel">
-                        </a>
-                    </div>
-                    <h2 class="title-item-certificate">Manejo Intermedio De La Herramienta De Hojas De Calculo Excel<br>2024</h2>
-                </div> 
-                <div class="item-certificate">
-                    <div class="container-img">
-                        <a href="https://app.aluracursos.com/user/osorioperezluisfernando/course/chatgpt-optimizando-calidad-resultados/certificate" target="_blank">
-                            <img src="../../public/images/chatgpt.png" alt="Habilidades Para la Vida">
-                        </a>
-                    </div>
-                    <h2 class="title-item-certificate">ChatGPT: optimizando la calidad de los resultados<br>2025</h2>
+    <link rel="icon" type="image/png" href="../../public/images/LFO.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../styles/tokens.css" />
+    <link rel="stylesheet" href="../styles/global-content.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <header class="navbar" id="navbar">
+      <div class="container navbar-inner">
+        <a href="../../index.html#inicio" class="brand">
+          <img src="../../public/images/LFO.png" alt="" width="36" height="36" />
+          <span>Luis Osorio</span>
+        </a>
+
+        <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
+          <ul>
+            <li><a href="../../index.html#inicio">Inicio</a></li>
+            <li><a href="../../index.html#proyectos">Proyectos</a></li>
+            <li><a href="../../index.html#experiencia">Experiencia</a></li>
+            <li><span class="is-current" aria-current="page">Certificaciones</span></li>
+            <li><a href="../../index.html#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Abrir menú de navegación"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow" style="justify-content: center; display: flex;">Formación</p>
+          <h1>Certificaciones y cursos</h1>
+          <p>
+            Formación técnica y complementaria que respalda mi perfil como analista y
+            desarrollador de software.
+          </p>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="content-certificates">
+          <div class="item-certificate">
+            <div class="container-img">
+              <a
+                href="https://drive.google.com/file/d/15Xe4xgQQctjv5drWeVy6cqnjELvV0do0/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="../../public/images/Diploma-Tecnico-sistemas.jpg" alt="Diploma Técnico en Sistemas" loading="lazy" />
+              </a>
             </div>
-            <div class="item-certificate">
-                    <div class="container-img">
-                        <a href="https://app.aluracursos.com/user/osorioperezluisfernando/course/git-github-repositorio-commit-versiones/certificate" target="_blank">
-                            <img src="../../public/images/github.png" alt="Habilidades Para la Vida">
-                        </a>
-                    </div>
-                    <h2 class="title-item-certificate">Git y GitHub: repositorio, commit y versiones<br>2025</h2>
+            <h2 class="title-item-certificate">Técnico en Sistemas <br />2021 — 2022</h2>
+          </div>
+
+          <div class="item-certificate">
+            <div class="container-img">
+              <a
+                href="https://drive.google.com/file/d/1Iw32QhrYGn1SQlqpWrQaU8dSvB1-2e3H/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="../../public/images/Tecnologo.jpg" alt="Diploma Tecnólogo en Análisis y Desarrollo de Software" loading="lazy" />
+              </a>
             </div>
-            <div class="item-certificate">
-                    <div class="container-img">
-                        <a href="https://app.aluracursos.com/certificate/osorioperezluisfernando/html-css-desarrollo-estructura-archivos-tags" target="_blank">
-                            <img src="../../public/images/html-css-basico.png" alt="Habilidades Para la Vida">
-                        </a>
-                    </div>
-                    <h2 class="title-item-certificate">HTML y CSS: ambientes de desarrollo, estructura de archivos y tags<br>2025</h2>
+            <h2 class="title-item-certificate">Tecnólogo en Análisis y Desarrollo de Software <br />2023 — 2025</h2>
+          </div>
+
+          <div class="item-certificate">
+            <div class="container-img">
+              <a
+                href="https://drive.google.com/file/d/10jk39_SxWijnB6gUq0SBuFn46wUms7Bo/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="../../public/images/Curso-lecto-escritura.jpg" alt="Certificado Habilidades Cognitivas en Lecto-Escritura" loading="lazy" />
+              </a>
             </div>
-            <div class="item-certificate">
-                    <div class="container-img">
-                        <a href="https://app.aluracursos.com/certificate/osorioperezluisfernando/html-css-clases-posicionamiento-flexbox" target="_blank">
-                            <img src="../../public/images/html-css-estructure.png" alt="Habilidades Para la Vida">
-                        </a>
-                    </div>
-                    <h2 class="title-item-certificate">HTML y CSS: Clases, Posicionamiento y Flexbox<br>2025</h2>
+            <h2 class="title-item-certificate">Habilidades Cognitivas en Lecto-Escritura <br />2024</h2>
+          </div>
+
+          <div class="item-certificate">
+            <div class="container-img">
+              <a
+                href="https://drive.google.com/file/d/1UNWy7VmObnGp8LlScEz1iP0TD2PA8NmZ/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="../../public/images/Curso-habilidades-vida.jpg" alt="Certificado Habilidades Para La Vida" loading="lazy" />
+              </a>
             </div>
-            <div class="item-certificate">
-                    <div class="container-img">
-                        <a href="https://app.aluracursos.com/user/osorioperezluisfernando/degree-programacion-primeros-pasos-15697/certificate" target="_blank">
-                            <img src="../../public/images/logica-programacion.png" alt="Habilidades Para la Vida">
-                        </a>
-                    </div>
-                    <h2 class="title-item-certificate">Lógica de programación con JavaScript<br>2025</h2>
+            <h2 class="title-item-certificate">Habilidades Para La Vida <br />2024</h2>
+          </div>
+
+          <div class="item-certificate">
+            <div class="container-img">
+              <a
+                href="https://drive.google.com/file/d/1Zos4jcpXksiTWmHosZxSOLW0aVzvh4sv/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="../../public/images/Basico-excel.jpg" alt="Certificado Manejo Básico de Excel" loading="lazy" />
+              </a>
             </div>
+            <h2 class="title-item-certificate">Manejo Básico de Hojas de Cálculo — Excel <br />2024</h2>
+          </div>
+
+          <div class="item-certificate">
+            <div class="container-img">
+              <a
+                href="https://drive.google.com/file/d/1GNvi0iJXarEONfd7zUTp5FTrkIHDUp7o/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="../../public/images/Intermedio-excel.jpg" alt="Certificado Manejo Intermedio de Excel" loading="lazy" />
+              </a>
             </div>
-        </main>
-    </div>    
-</body>
+            <h2 class="title-item-certificate">Manejo Intermedio de Hojas de Cálculo — Excel <br />2024</h2>
+          </div>
+
+          <div class="item-certificate">
+            <div class="container-img">
+              <a
+                href="https://app.aluracursos.com/user/osorioperezluisfernando/course/chatgpt-optimizando-calidad-resultados/certificate"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="../../public/images/chatgpt.png" alt="Certificado ChatGPT: optimizando la calidad de los resultados" loading="lazy" />
+              </a>
+            </div>
+            <h2 class="title-item-certificate">ChatGPT: Optimizando la Calidad de los Resultados <br />2025</h2>
+          </div>
+
+          <div class="item-certificate">
+            <div class="container-img">
+              <a
+                href="https://app.aluracursos.com/user/osorioperezluisfernando/course/git-github-repositorio-commit-versiones/certificate"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="../../public/images/github.png" alt="Certificado Git y GitHub" loading="lazy" />
+              </a>
+            </div>
+            <h2 class="title-item-certificate">Git y GitHub: Repositorio, Commit y Versiones <br />2025</h2>
+          </div>
+
+          <div class="item-certificate">
+            <div class="container-img">
+              <a
+                href="https://app.aluracursos.com/certificate/osorioperezluisfernando/html-css-desarrollo-estructura-archivos-tags"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="../../public/images/html-css-basico.png" alt="Certificado HTML y CSS: Ambientes de Desarrollo" loading="lazy" />
+              </a>
+            </div>
+            <h2 class="title-item-certificate">HTML y CSS: Ambientes de Desarrollo, Estructura de Archivos y Tags <br />2025</h2>
+          </div>
+
+          <div class="item-certificate">
+            <div class="container-img">
+              <a
+                href="https://app.aluracursos.com/certificate/osorioperezluisfernando/html-css-clases-posicionamiento-flexbox"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="../../public/images/html-css-estructure.png" alt="Certificado HTML y CSS: Clases, Posicionamiento y Flexbox" loading="lazy" />
+              </a>
+            </div>
+            <h2 class="title-item-certificate">HTML y CSS: Clases, Posicionamiento y Flexbox <br />2025</h2>
+          </div>
+
+          <div class="item-certificate">
+            <div class="container-img">
+              <a
+                href="https://app.aluracursos.com/user/osorioperezluisfernando/degree-programacion-primeros-pasos-15697/certificate"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="../../public/images/logica-programacion.png" alt="Certificado Lógica de Programación con JavaScript" loading="lazy" />
+              </a>
+            </div>
+            <h2 class="title-item-certificate">Lógica de Programación con JavaScript <br />2025</h2>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="../../public/images/LFO.png" alt="" width="28" height="28" />
+          <span>Luis Fernando Osorio Pérez</span>
+        </div>
+
+        <nav aria-label="Enlaces del pie de página">
+          <ul class="footer-links">
+            <li><a href="../../index.html#inicio">Inicio</a></li>
+            <li><a href="../../index.html#proyectos">Proyectos</a></li>
+            <li><a href="../../index.html#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <a
+          href="https://github.com/FernandoPerez02"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-social"
+          aria-label="Perfil de GitHub"
+        >
+          <i class="bi bi-github"></i>
+        </a>
+      </div>
+      <p class="footer-copy">© <span id="year">2026</span> Luis Fernando Osorio Pérez.</p>
+    </footer>
+
+    <script src="../scripts/main.js" defer></script>
+  </body>
 </html>

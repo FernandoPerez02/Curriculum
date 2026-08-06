@@ -1,147 +1,298 @@
+/* ==========================================================================
+   Certificates page — component styles
+   Design tokens live in tokens.css
+   ========================================================================== */
+
 body {
-    background: #0D0F2B;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at 15% 0%, rgba(124, 108, 240, 0.1), transparent 45%),
+    radial-gradient(circle at 85% 0%, rgba(45, 212, 222, 0.08), transparent 40%), var(--color-bg);
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.content-certificates {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    width: 100%;
-    align-items: center;
-    margin: 65px 0;
-    grid-gap: 20px;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-header {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 70px;
-    width: 100%;
-    background: #0D0F2B;
-    z-index: 1000;
-    top: 0;
-}
-
-.navbar, header h2 {
-    position: fixed;
-    top: 10px; 
-}
+/* ---------------------------------- Navbar (shared look with home) ---------------------------------- */
 
 .navbar {
-    right: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.navbar nav ul {
-    display: flex;
-    gap: 10px;
-    text-decoration: none;
-    list-style: none;
-    padding: 0 15px;
+/*
+ * The blurred background lives on a pseudo-element rather than directly on
+ * .navbar: a `backdrop-filter` on .navbar would make it the containing block
+ * for its `position: fixed` descendants (the mobile nav panel), which breaks
+ * their fixed positioning relative to the viewport.
+ */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(10, 12, 30, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.navbar nav ul li a {
-    text-decoration: none;
-    font-size: 18px;
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-right: auto;
+}
+
+.brand img {
+  border-radius: 50%;
+}
+
+.nav-links ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.nav-links a,
+.nav-links .is-current {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.nav-links a {
+  transition: color var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--color-text);
+}
+
+.nav-links .is-current {
+  color: var(--color-accent-strong);
+  font-weight: 600;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: var(--radius-full);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------------------------------- Page header ---------------------------------- */
+
+.page-hero {
+  padding-block: var(--space-12) var(--space-8);
+}
+
+.page-hero .eyebrow {
+  justify-content: center;
+}
+
+.page-hero h1 {
+  font-size: clamp(1.8rem, 1.4rem + 1.8vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.page-hero p {
+  text-align: center;
+  color: var(--color-text-secondary);
+  max-width: 56ch;
+  margin: var(--space-3) auto 0;
+}
+
+/* ---------------------------------- Certificates grid ---------------------------------- */
+
+.content-certificates {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+  padding-bottom: var(--space-16);
 }
 
 .item-certificate {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: #1B1F3A;
-    overflow: hidden;
-    box-shadow: #26c6da 0px 4px 10px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.item-certificate:hover {
+  transform: translateY(-4px);
+  border-color: rgba(45, 212, 222, 0.3);
+  box-shadow: var(--shadow-md);
 }
 
 .container-img {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    aspect-ratio: 16/14;
-    border-radius: 10px 10px 0 0;
-    background-color: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #f2f3f9;
 }
 
 .container-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    transition: transform 0.5s ease, filter 0.3s ease;
-    background-color: #fff;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background-color: #ffffff;
+  transition: transform 0.5s var(--ease);
 }
 
- .container-img:hover img {
-    transform: scale(1.10);
-    filter: brightness(1.1) saturate(1.05);
+.container-img:hover img {
+  transform: scale(1.06);
 }
 
 .title-item-certificate {
-    background-color: #f9f9f9;
-    text-align: center;
-    font-size: 1rem;
-    padding: 10px;
-    margin: 0;
-    color: #0D0F2B;
-    border-top: 1px solid #ddd;
+  padding: var(--space-4) var(--space-5);
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
 }
 
-.item-experience {
+/* ---------------------------------- Footer ---------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-8) var(--space-6);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+}
+
+.footer-brand img {
+  border-radius: 50%;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.footer-links a {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--color-accent-strong);
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  font-size: 1.1rem;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.footer-social:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.footer-copy {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 860px) {
+  .nav-links {
+    display: none;
+    position: fixed;
+    inset: var(--nav-height) 0 0 0;
+    background: var(--color-bg-soft);
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .nav-toggle {
     display: flex;
+  }
+
+  .navbar.is-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links ul {
     flex-direction: column;
-    min-width: 400px;
-    min-height: 240px;
-    max-height: 500px;
-    background: #1B1F3A;
-    overflow: hidden;
-    box-shadow: #26c6da 0px 4px 10px;
-    border-radius: 10px;
+    align-items: flex-start;
+    gap: var(--space-5);
+  }
+
+  .nav-links a,
+  .nav-links .is-current {
+    font-size: 1.15rem;
+  }
 }
 
-.group-item, .content-text {
-    display: flex;
-    align-items: center;
-}
-
-.group-item h4 {
-    margin-left: 30px;
-    font-size: 1.2rem;
-}
-
-.group-item, h4, p {
-    margin: 2px 0;
-}
-
-.bi-dot {
-    font-size: 35px;
-    color: #26C6DA;
-}
-
-.item-experience span {
-    padding: 0 0 10px 40px;
-}
-
-.bi-building {
-    padding: 0 10px;
-    margin: 0;
-}
-
-h2, a, img, h4, .bi-building, p, span{
-    color: #ffffff;
+@media (max-width: 400px) {
+  .container {
+    padding-inline: var(--space-4);
+  }
 }
